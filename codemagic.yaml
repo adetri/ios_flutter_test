@@ -1,0 +1,10 @@
+workflows:
+  version: 2
+  build_ios:
+    name: Build iOS
+    script:
+      - flutter build ios
+      - cd ios
+      - flutter build ipa --release
+    artifacts:
+      - build/ios/ipa/Runner.ipa
