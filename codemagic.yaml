@@ -1,5 +1,10 @@
 workflows:
-    sample-workflow:
-        name: Codemagic Sample Workflow
-        max_build_duration: 120
-        instance_type: mac_mini_m1
+
+  build_ios:
+    name: Build iOS
+    scripts:
+      - flutter build ios
+      - cd ios
+      - flutter build ipa --release
+    artifacts:
+      - build/ios/ipa/Runner.ipa
